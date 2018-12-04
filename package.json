@@ -1,0 +1,26 @@
+{
+  "name": "open-api-3-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for API Specification, using Open API 3.0 &amp; Swagger UI",
+  "scripts": {
+    "postinstall": "docker pull swaggerapi/swagger-ui",
+    "dev": "./node_modules/.bin/run-p -c dev:build dev:docker dev:watch",
+    "dev:build": "node ./util/build.js",
+    "dev:docker": "docker stop api_spec || true && docker rm api_spec || true && docker run -d -p 8042:8080 --rm -e SWAGGER_JSON=/api_spec/swagger.json -v $PWD:/api_spec --name api_spec swaggerapi/swagger-ui",
+    "dev:watch": "node ./util/dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admbradford/open-api-3-boilerplate.git"
+  },
+  "author": "Adam Bradford <abradford@redventures.com>",
+  "bugs": {
+    "url": "https://github.com/admbradford/open-api-3-boilerplate/issues"
+  },
+  "homepage": "https://github.com/admbradford/open-api-3-boilerplate#readme",
+  "dependencies": {
+    "consola": "^2.3.0",
+    "json-refs": "^3.0.12",
+    "npm-run-all": "^4.1.5"
+  }
+}

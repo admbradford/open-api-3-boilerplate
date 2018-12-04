@@ -1,0 +1,13 @@
+{
+  "schemas": {
+    "Pet": {
+      "$ref": "pet.json"
+    },
+    "Pets": {
+      "$ref": "pets.json"
+    },
+    "Error": {
+      "$ref": "error.json"
+    }
+  }
+}

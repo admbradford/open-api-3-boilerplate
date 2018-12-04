@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+compiled.yaml
+compiled.json
+swagger.json
+.DS_Store
