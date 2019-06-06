@@ -5,12 +5,9 @@ const JsonRefs = require('json-refs');
 
 const build = async () => {
   JsonRefs.clearCache();
-  return JsonRefs.resolveRefsAt(
-    path.join(__dirname, '../src/index.json'),
-    {
-      location: path.join(process.cwd(), 'src/index.json'),
-    },
-  ).then((results) => {
+  return JsonRefs.resolveRefsAt(path.join(__dirname, '../src/index.json'), {
+    location: path.join(process.cwd(), 'src/index.json'),
+  }).then(results => {
     const env = {
       development: {
         host: 'localhost:9000',
